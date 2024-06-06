@@ -10,7 +10,7 @@ from docx import Document
 import os
 
 try:
-    # Load the data
+    # User input to select the CSV file
     csv_option = int(input("1. Generate report for openpowerlifting.\n2. Generate report for openpowerlifting-2024-01-06-4c732975.\n[Press 1 or 2]: "))
     if csv_option == 1:
         csv_file = "openpowerlifting"
@@ -19,12 +19,13 @@ try:
     else:
         raise ValueError("Invalid option selected. Please choose either 1 or 2.")
 
+    # Load the data
     pl_data = pd.read_csv(f'./Csv_data/{csv_file}.csv', low_memory=False)
 
     # Ignore DtypeWarning
     pd.options.mode.chained_assignment = None
 
-    # Rename columns
+    # Rename columns for consistency
     pl_data.rename(columns={
         'BodyweightKg': 'BodyweightKg',
         'WeightClassKg': 'WeightClassKg',
@@ -153,7 +154,13 @@ try:
     # Save the document
     doc.save(os.path.join(reports_folder, f'{csv_file}_report.docx'))
 
+    print(f"Report generated and saved as '{csv_file}_report.docx' in the '{reports_folder}' folder.")
+
 except ValueError as ve:
     print(f"ValueError: {ve}. Please choose either 1 or 2.")
+except FileNotFoundError:
+    print(f"FileNotFoundError: The file '{csv_file}.csv' was not found in the './Csv_data/' directory.")
+except pd.errors.EmptyDataError:
+    print(f"EmptyDataError: The file '{csv_file}.csv' is empty or has no data.")
 except Exception as e:
-    print(f"An error occurred: {e}")
+    print(f"An unexpected error occurred: {e}")
