@@ -1,7 +1,7 @@
-HI
+
 #!/bin/bash
 
-# App Name: Data Management and Prediction
+# Data-Insights-ETL-Hub
 
 ## Overview:
 # This application provides functionalities for managing data stored in a PostgreSQL database and making predictions based on the data using Python scripts.
