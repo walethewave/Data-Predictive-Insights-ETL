@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# App Name: Data Management and Prediction
+# Create README.md file with instructions for using the app
+cat <<EOL > README.md
+# Data Management and Prediction
 
 ## Overview:
 This application provides functionalities for managing data stored in a PostgreSQL database and making predictions based on the data using Python scripts.
@@ -10,50 +12,45 @@ This application provides functionalities for managing data stored in a PostgreS
 2. Ensure you have Python 3.x installed on your system.
 
 ## Configuration:
-Before running the scripts, ensure to configure the `config.py` file with your PostgreSQL database credentials:
-```python
+Before running the scripts, ensure to configure the \`config.py\` file with your PostgreSQL database credentials:
+\`\`\`python
 user = " default username is [postgres] "
 password = " your password here "
 host = " localhost or 127.0.0.1 "
 port = " default port is [5432] "
-```
+\`\`\`
 
-## Configuration:
-1. csv_to_postgres.py:
-This script allows you to import CSV data into your PostgreSQL database.
+## Scripts:
+1. \`csv_to_postgres.py\`:
+   This script allows you to import CSV data into your PostgreSQL database.
 
-## Usage:
+### Usage:
 Run the script using the following command:
 
-
-```bash
+\`\`\`bash
 python3 csv_to_postgres.py
-```
+\`\`\`
 Follow the prompts and choose an option:
+- Option 1: Import data from CSV to PostgreSQL.
+- Option 2: Exit the script.
 
-Option 1: Import data from CSV to PostgreSQL.
-Option 2: Exit the script.
-2. prediction_script.py:
-This script enables you to make predictions based on the data stored in the PostgreSQL database.
+2. \`prediction_script.py\`:
+   This script enables you to make predictions based on the data stored in the PostgreSQL database.
 
-Usage:
+### Usage:
 Run the script using the following command:
 
-
-```bash
+\`\`\`bash
 python3 prediction_script.py
-```
+\`\`\`
 Follow the prompts and choose an option:
+- Option 1: Make predictions based on the data.
+- Option 2: Exit the script.
 
-Option 1: Make predictions based on the data.
-Option 2: Exit the script.
-Dependencies:
-Python 3.x
-PostgreSQL 16
-License:
+## Dependencies:
+- Python 3.x
+- PostgreSQL 16
+
+## License:
 This project is licensed under the MIT License.
-
-
-```javascript
-This script creates a README.md file with the instructions for using the app. You can s
-```
+EOL
