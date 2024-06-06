@@ -120,9 +120,9 @@ port = " default port is [5432] "
 ### Usage:
 Run the script using the following command:
 
-\`\`\`bash
+bash
 python3 csv_to_postgres.py
-\`\`\`
+
 Follow the prompts and choose an option:
 - Option 1: Import data from CSV to PostgreSQL.
 - Option 2: Exit the script.
@@ -135,10 +135,15 @@ Run the script using the following command:
 
 \`\`\`bash
 python3 prediction_script.py
-\`\`\`
+
 Follow the prompts and choose an option:
 - Option 1: Make predictions based on the data.
 - Option 2: Exit the script.
+# Power BI Report
+
+The Power BI report is too large to upload directly to GitHub. You can download it from the following link:
+
+[Download Power BI Report](https://drive.google.com/file/d/1mCELiqU9P7DpTOsy4NNIxFv6Brnrqk_O/view?usp=sharing)
 
 ## Dependencies:
 - Python 3.x
