@@ -1,4 +1,12 @@
+# My Project
 
+This is a description of my project.
+
+## Data Source
+
+You can download the Powerlifting Database from the following link (Note: the file is large):
+
+[Download the Powerlifting Database here](https://www.kaggle.com/datasets/open-powerlifting/powerlifting-database)
 #!/bin/bash
 
 # Data-Insights-ETL-Hub
