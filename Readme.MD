@@ -45,6 +45,62 @@ This project focuses on developing a comprehensive data analytics and reporting 
 4. **Predictive Modeling**: Utilizes Scikit-learn  for predictive analytics.
 5. **Reporting and Visualization**: Creates interactive reports and visualizations using Microsoft Power BI.
 
+# Predictive Analysis Report: Powerlifting Total Lift Prediction
+
+## Introduction
+This report focuses on predicting the total weight lifted by powerlifters based on their age, body weight, and equipment used. The goal of this data science project is to build and evaluate a predictive model using linear regression. This process involves data exploration, preprocessing, model training, and performance evaluation.
+
+## Dataset Overview
+The dataset utilized in this analysis is from the file `"openpowerlifting.csv"` or `"openpowerlifting-2024-01-06-4c732975.csv"`. This dataset contains various attributes related to powerlifting competitions, including:
+
+- **Age**: The age of the powerlifter.
+- **BodyweightKg**: The body weight of the powerlifter in kilograms.
+- **Best3SquatKg**: The best squat lift recorded.
+- **Best3BenchKg**: The best bench press lift recorded.
+- **Best3DeadliftKg**: The best deadlift lift recorded.
+- **Equipment**: Type of equipment used (e.g., raw or equipped).
+
+### Data Preparation
+- **Data Cleaning**: Removed outliers and unnecessary columns. Columns dropped include 'Division', 'Place', 'MeetName', and 'Federation'.
+- **Outlier Removal**: Excluded entries with age above 79 years, body weight over 153.27 kg, or non-positive lift records.
+- **Feature Engineering**: Created a new column `TotalKg` which is the sum of `Best3SquatKg`, `Best3BenchKg`, and `Best3DeadliftKg`.
+- **Data Splitting**: The dataset was divided into training (80%) and testing (20%) sets.
+
+### Model Building
+- **Model Choice**: A Linear Regression model was selected due to its simplicity and interpretability.
+- **Preprocessing Pipeline**:
+  - **Numeric Features**: Scaled using `StandardScaler`.
+  - **Categorical Features**: Encoded using `OneHotEncoder` to handle different equipment types.
+- **Training**: The model was trained using the processed training data.
+
+### Model Evaluation
+- **Train R^2 Score**: Measures how well the model explains the variance in the training data.
+- **Test R^2 Score**: Indicates how well the model generalizes to unseen data.
+- **Train RMSE (Root Mean Squared Error)**: Reflects the average prediction error on the training set.
+- **Test RMSE**: Shows the average prediction error on the test set.
+
+#### Performance Metrics
+- **Train R^2 Score**: 0.4110
+- **Test R^2 Score**: 0.4110
+- **Train RMSE**: 114.0 kg
+- **Test RMSE**: 114.0 kg
+
+### Summary
+- The linear regression model explains approximately 41% of the variance in total weight lifted.
+- The average prediction error is about 114 kg.
+- Consistent performance across training and test sets suggests no overfitting or underfitting.
+
+### Recommendations for Improvement
+1. **Model Enhancement**: Develop separate models for individual lifts (squat, bench press, deadlift) for potentially better accuracy.
+2. **Feature Engineering**: Consider adding interaction terms or breaking down age and body weight into more granular groups to capture their effects more precisely.
+3. **Advanced Techniques**: Explore more complex algorithms such as Random Forests or Gradient Boosting for improved prediction accuracy.
+
+### Conclusion
+The linear regression model provides a foundational approach to predicting the total weight lifted by powerlifters based on age, body weight, and equipment. Although the current model offers a baseline, further refinements and additional features could enhance its accuracy and utility.
+
+This analysis is valuable for understanding key factors influencing powerlifting performance and can guide future improvements in predictive modeling within the domain of sports analytics.
+
+
 
 ## Installation:
 # 1. Clone or download the repository to your local machine.
